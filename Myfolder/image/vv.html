@@ -1,0 +1,310 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <style>
+
+        .menu {
+            width: 100%;
+            height: 100px;
+            background-color: #142249;
+            position: fixed;
+            filter: none;
+        }
+        .empty{
+            width:100%;
+            height:100px;
+        }
+        body{
+            width: 1500px;
+            background-color:black;
+            margin: 0px 10px 30px 20px;
+        }
+        .footer{
+            margin:40% 25% 10% 25%;
+            width:50%;
+            height:100px;
+            text-align:center;
+            color:white;
+        }
+        a {
+            text-decoration: none;
+        }
+        p {
+            text-decoration: none;
+
+        }
+        .leftmenu {
+            width: 10%;
+            height: inherit;
+            float:left;
+        }
+        .leftmenu a{
+            width:inherit;
+            height:inherit;
+        }
+        .leftmenu a img{
+            width:auto;
+            height:100%;
+        }
+        .leftmenu2 {
+            width: 400px;
+            height: inherit;
+            float: left;
+        }
+        .leftmenu2 ul{
+            margin: 0px 10px;
+            padding: 30px 0px 20px 10px;
+            height:inherit;
+        }
+        .leftmenu2 ul li{
+            list-style: none;
+            display: inline;
+            margin: inherit;
+            height:inherit
+        }
+        .leftmenu2 ul li a{
+            text-decoration: none;
+            font-size: 20px;
+            height:inherit;
+            width:auto;
+            margin:inherit;
+            color:white;
+        }
+        .leftmenu2 ul li :hover,.open:hover{
+            background-color:grey;
+            cursor: pointer;
+        }
+        .rightmenu {
+            width: 250px;
+            height: inherit;
+            float: right;
+        }
+        .rightmenu ul{
+            margin: 0px 10px;
+            padding: 30px 0px 20px 0px;
+        }
+        .rightmenu ul li{
+            list-style: none;
+            display: inline;
+            margin: inherit;
+        }
+        .rightmenu ul li :hover {
+            background-color: grey;
+        }
+        .rightmenu ul li a{
+            text-decoration: none;
+            font-size: 20px;
+            height:50px;
+            width:auto;
+            margin:inherit;
+            color:white;
+        }
+        :target{  
+            display:unset !important;
+        }
+        .form_search {
+            margin: 20px auto 0px auto;
+            padding: 20px;
+            width: 500px;
+            height:30px
+        }
+        .form_search input[type=text]{
+            width:300px;
+            height:inherit;
+        }
+        .form_search input[type=submit]{
+            height:inherit
+        }
+        .box{
+            width:300px;
+            height:300px;
+            background-color:white;
+            margin:20px 20px 80px 30px;
+            padding:10px;
+            float:left
+        }
+        .box a
+        {
+            width:inherit;
+            height:inherit;
+        }
+        .box a img{
+            width:inherit;
+            height:auto;
+            border-radius:50%
+        }
+        .des{
+            display:none;
+            text-align:center;
+            padding:10px 0 0 0;
+            text-decoration:none;
+            color:black;
+        }
+        .box :hover .des{
+            display:block;
+        }
+        .login {
+            background-color: rgba(0,0,0,0.4);
+            height: 100%;
+            width: 100%;
+            position: fixed;
+            color: white;
+            z-index: 1;
+            display: none;
+        }
+        .loginScreen {
+            background-color: #142249;
+            height: 30%;
+            width: 25%;
+            padding: 20px 50px 50px 50px;
+            margin: 10% 25% 20% 35%;
+            
+        }
+        .loginScreen input[type=text] {
+            width: 100%;
+        }
+        .loginScreen input[type=password] {
+            width: 100%;
+        }
+        .loginScreen input[type=submit] {
+            width: 60px;
+            margin: 20px 0;
+        }
+        .loginScreen input[type=button] {
+            width: 100px;
+            margin: 20px 0;
+            float: right;
+        }
+        .loginScreen a {
+            color: #d9908a;
+        }
+        .close {
+            float:right;
+            font-size: 35px;
+            font-weight: bold;
+        }
+        .close:hover{
+            color:red;
+            cursor: pointer;
+        }
+        .loginform{
+            margin:30px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="menu">
+        <div class="leftmenu">
+            <a href=""><img src="logo.png" /></a>
+        </div>
+        <div class="leftmenu2">
+            <ul>
+                <li><a href="">Flight </a></li>
+                <li><a href="">Coupon & Deals </a> </li>
+                <li><a href="">About</a></li>
+            </ul>
+        </div>
+        <div class="rightmenu">
+            <ul>
+                <li><a><span onclick="document.getElementById('login').style.display='block'" class="open" style="width:auto;">Login</span></a></li>
+                <li><a href="">Money: 0$ </a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="empty">
+    </div>
+    <div id="login" class="login">
+        <form class="loginScreen" action="http://localhost/Myfolder/MainMenu.php" method="post">
+            <span onclick="document.getElementById('login').style.display='none'" class="close" title="Close Modal">&times;</span>
+            <div class="loginform">
+                <label> Username </label>
+                <input type="text" name="username" placeholder="123@mail.com" />
+                <br>
+                <label> Password </label>
+                <input type="password" name="Pass" placeholder="..." />
+                <br>
+                <input type="submit" name="Login"" value="Login" />
+                <p><?php  ?></p>
+                <p> Forget password, press<a href=""> here </a></p>
+                <p> Don't have an account yet sign up <a href="file:///C:/Users/Viet%20Anh/Documents/Tour%20html/Register.html"> here </a> </p>
+            </div>
+        </form>
+
+    </div>
+    <div class="form_search" >
+        <form action="http://localhost/Myfolder/ShowTour.php" method="post">
+            <input type="text" name="seach" placeholder="Search Anywhere">
+            <input type="text" name="Tour" placeholder="Search Tour">
+            <input type="submit" value="Search">
+            <input type="submit" value="Showtour" name="Showtour"">
+
+        </form>
+    </div>
+    <div class="content">
+        <div class="box">
+            <a href=""><img src="BB.jpg" </a>
+            <div class="des">
+                <p>London</p>
+                <p>Avarage: 600$</p>
+            </div>
+        </div>
+        <div class="box">
+            <a href=""><img src="DC.jpg" </a>
+            <div class="des">
+                <p>USA</p>
+                <p>Avarage: 750$</p>
+            </div>
+        </div>
+        <div class="box">
+            <a href=""><img src="Paris.jpg" </a>
+            <div class="des">
+                <p>France</p>
+                <p>Avarage: 500$</p>
+            </div>
+        </div>
+        <div class="box">
+            <a href=""><img src="Thai.jpg" </a>
+            <div class="des">
+                <p>Thailand</p>
+                <p>Avarage: 300$</p>
+            </div>
+        </div>
+        <div class="box">
+            <a href=""><img src="China.jpg" </a>
+            <div class="des">
+                <p>China</p>
+                <p>Avarage: 500$</p>
+            </div>
+        </div>
+        <div class="box">
+            <a href=""><img src="Jp.jpg" </a>
+            <div class="des">
+                <p>Japan</p>
+                <p>Avarage: 600$</p>
+            </div>
+        </div>
+        <div class="box">
+            <a href=""><img src="Rome.jpg" </a>
+            <div class="des">
+                <p>Italy</p>
+                <p>Avarage: 200$</p>
+            </div>
+        </div>
+        <div class="box">
+            <a href=""><img src="Iran.jpg" </a>
+            <div class="des">
+                <p>Iran</p>
+                <p>Avarage: 100$</p>
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+        <p>Contact: Email@EEE.com</p>
+        <p>Number:0100100110</p>
+        <p>Address: I dont't know</p>
+    </div>
+</body>
+</html>
